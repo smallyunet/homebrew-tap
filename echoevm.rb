@@ -1,8 +1,8 @@
 class Echoevm < Formula
   desc "EVM debugger, tracer, differential tester, and replay tool"
   homepage "https://github.com/smallyunet/echoevm"
-  url "https://github.com/smallyunet/echoevm/archive/refs/tags/v0.0.36.tar.gz"
-  sha256 "e400b005c3028807c3795e307eaa2deee3ee45c79b7cd65b18c6c0dd7e94825b"
+  url "https://github.com/smallyunet/echoevm/archive/refs/tags/v0.0.37.tar.gz"
+  sha256 "8e3e321969ee56b6a880da0967fc3c5f09815f041c6dc87ff27b6608752ff5cf"
   license "MIT"
   head "https://github.com/smallyunet/echoevm.git", branch: "main"
 
@@ -13,8 +13,8 @@ class Echoevm < Formula
       -s
       -w
       -X main.Version=v#{version}
-      -X main.GitCommit=91e449ffe94730619c9bd63636d4c8c859e24597
-      -X main.BuildDate=2026-08-03T06:50:35Z
+      -X main.GitCommit=bee203b8ae09bc2e044275b23c359462ba03410e
+      -X main.BuildDate=2026-08-03T07:25:49Z
     ]
     system "go", "build", *std_go_args(ldflags: ldflags.join(" ")), "./cmd/echoevm"
   end
