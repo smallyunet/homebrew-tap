@@ -1,0 +1,24 @@
+name: brew test-bot
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
+      - name: Check PySonar2 style
+        run: brew style ./pysonar2.rb
+      - name: Audit PySonar2
+        run: brew audit --strict --online smallyunet/tap/pysonar2
+      - name: Install PySonar2
+        run: brew install smallyunet/tap/pysonar2
+      - name: Test PySonar2
+        run: brew test smallyunet/tap/pysonar2

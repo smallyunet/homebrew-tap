@@ -1,7 +1,7 @@
 # smallyunet Homebrew Tap
 
 [![Homebrew](https://img.shields.io/badge/Homebrew-Tap-FBB040?logo=homebrew&logoColor=black)](https://brew.sh/)
-[![Formulae](https://img.shields.io/badge/formulae-2-blue)](#available-formulae)
+[![Formulae](https://img.shields.io/badge/formulae-3-blue)](#available-formulae)
 
 Homebrew formulae for command-line tools maintained by
 [smallyunet](https://github.com/smallyunet). This tap supports both macOS and
@@ -26,8 +26,26 @@ brew install echoevm
 
 | Formula | Description | Project |
 | --- | --- | --- |
+| `pysonar2` | Whole-project semantic analysis engine for Python | [smallyunet/pysonar2](https://github.com/smallyunet/pysonar2) |
 | `echoevm` | EVM debugger, tracer, differential tester, and replay tool | [smallyunet/echoevm](https://github.com/smallyunet/echoevm) |
 | `konachan-downloader` | Multi-threaded downloader for konachan.net with smart updates and resumable downloads | [smallyunet/konachan-downloader](https://github.com/smallyunet/konachan-downloader) |
+
+### PySonar2
+
+```bash
+brew install smallyunet/tap/pysonar2
+pysonar --version
+pysonar doctor --format json
+```
+
+Install its semantic-analysis Skill for a supported coding agent after installing the CLI:
+
+```bash
+pysonar skill install --agent portable --scope user
+```
+
+See the [PySonar2 documentation](https://github.com/smallyunet/pysonar2#readme)
+for definitions, references, inferred types, change-impact analysis, and Skill targets.
 
 ### EchoEVM
 
@@ -68,6 +86,7 @@ Update Homebrew metadata and upgrade packages installed from this tap:
 
 ```bash
 brew update
+brew upgrade pysonar2
 brew upgrade echoevm
 brew upgrade konachan-downloader
 ```
@@ -76,6 +95,7 @@ Inspect an installed formula or view the tap's status:
 
 ```bash
 brew info smallyunet/tap/echoevm
+brew info smallyunet/tap/pysonar2
 brew tap-info smallyunet/tap
 ```
 
@@ -109,6 +129,7 @@ Formula improvements and fixes are welcome. Before opening a pull request, run:
 brew style ./echoevm.rb ./konachan-downloader.rb
 brew audit --strict --online smallyunet/tap/echoevm
 brew audit --strict --online smallyunet/tap/konachan-downloader
+brew audit --strict --online smallyunet/tap/pysonar2
 ```
 
 When updating a release, change both the source URL and SHA-256 checksum, then
