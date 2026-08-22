@@ -5,8 +5,8 @@
 class Pysonar2 < Formula
   desc "Whole-project semantic analysis engine for Python"
   homepage "https://github.com/smallyunet/pysonar2"
-  url "https://github.com/smallyunet/pysonar2/releases/download/v3.3.5/pysonar-cli-3.3.5.zip"
-  sha256 "813c09b0f8c21e70971725311fd9fddea1714442776a62f77e0475647351405a"
+  url "https://github.com/smallyunet/pysonar2/releases/download/v3.4.0/pysonar-cli-3.4.0.zip"
+  sha256 "217dc27fb5c1f01e5cabaab5d1c6c16c157c2d8475ae80b22a0036f4f55a4142"
   license "Apache-2.0"
 
   livecheck do
