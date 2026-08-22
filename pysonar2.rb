@@ -6,7 +6,6 @@ class Pysonar2 < Formula
   desc "Local-first whole-project Python semantic analysis engine"
   homepage "https://github.com/smallyunet/pysonar2"
   url "https://github.com/smallyunet/pysonar2/releases/download/v4.0.0/pysonar2-v4.0.0-x86_64-unknown-linux-gnu.tar.gz"
-  version "4.0.0"
   sha256 "b06ce1174933ca361284a316c165b104d50986081b3825e8ce9ecd54d0956bc1"
   license "Apache-2.0"
 
