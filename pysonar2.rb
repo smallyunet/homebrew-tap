@@ -5,8 +5,15 @@
 class Pysonar2 < Formula
   desc "Local-first whole-project Python semantic analysis engine"
   homepage "https://github.com/smallyunet/pysonar2"
+  url "https://github.com/smallyunet/pysonar2/releases/download/v4.0.0/pysonar2-v4.0.0-x86_64-unknown-linux-gnu.tar.gz"
   version "4.0.0"
+  sha256 "b06ce1174933ca361284a316c165b104d50986081b3825e8ce9ecd54d0956bc1"
   license "Apache-2.0"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   on_macos do
     if Hardware::CPU.arm?
@@ -16,16 +23,6 @@ class Pysonar2 < Formula
       url "https://github.com/smallyunet/pysonar2/releases/download/v4.0.0/pysonar2-v4.0.0-x86_64-apple-darwin.tar.gz"
       sha256 "47fc27fb4b5806e0cee66b3abac753409e46e93a8546d05b2b9fd97088982b34"
     end
-  end
-
-  on_linux do
-    url "https://github.com/smallyunet/pysonar2/releases/download/v4.0.0/pysonar2-v4.0.0-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "b06ce1174933ca361284a316c165b104d50986081b3825e8ce9ecd54d0956bc1"
-  end
-
-  livecheck do
-    url :stable
-    strategy :github_latest
   end
 
   def install
@@ -48,9 +45,9 @@ class Pysonar2 < Formula
 
       value = target()
     PYTHON
-    context = JSON.parse(shell_output(
-      "#{bin}/pysonar context --root #{testpath} --file sample.py --line 1 --character 5 --format json",
-    ))
+    command = "#{bin}/pysonar context --root #{testpath} --file sample.py " \
+              "--line 1 --character 5 --format json"
+    context = JSON.parse(shell_output(command))
     assert_equal "target", context["symbol"]
     assert_equal "complete", context["coverageStatus"]
     assert context["applicable"]
