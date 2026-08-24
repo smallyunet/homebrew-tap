@@ -1,12 +1,12 @@
 # typed: strict
 # frozen_string_literal: true
 
-# Homebrew formula for the native PySonar2 semantic CLI and language server.
+# Homebrew formula for the native PySonar2 type-inference CLI and language server.
 class Pysonar2 < Formula
-  desc "Local-first whole-project Python semantic analysis engine"
+  desc "Whole-project type inferencer and semantic indexer for Python"
   homepage "https://github.com/smallyunet/pysonar2"
-  url "https://github.com/smallyunet/pysonar2/releases/download/v4.0.0/pysonar2-v4.0.0-x86_64-unknown-linux-gnu.tar.gz"
-  sha256 "b06ce1174933ca361284a316c165b104d50986081b3825e8ce9ecd54d0956bc1"
+  url "https://github.com/smallyunet/pysonar2/releases/download/v4.1.0/pysonar2-v4.1.0-x86_64-unknown-linux-gnu.tar.gz"
+  sha256 "1d215078c454c24d7bebea6fe315cb0557f53b16786333b687f721983595c0b0"
   license "Apache-2.0"
 
   livecheck do
@@ -16,11 +16,11 @@ class Pysonar2 < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/smallyunet/pysonar2/releases/download/v4.0.0/pysonar2-v4.0.0-aarch64-apple-darwin.tar.gz"
-      sha256 "cdfe1346b57d3ac80fbc43c09ee6e5ed1b041ba38a279270020d875f9fad7478"
+      url "https://github.com/smallyunet/pysonar2/releases/download/v4.1.0/pysonar2-v4.1.0-aarch64-apple-darwin.tar.gz"
+      sha256 "7557d5d12fb64838e25750d3b7990d2c96c5a90be5b6487b22042e36b3946bb7"
     else
-      url "https://github.com/smallyunet/pysonar2/releases/download/v4.0.0/pysonar2-v4.0.0-x86_64-apple-darwin.tar.gz"
-      sha256 "47fc27fb4b5806e0cee66b3abac753409e46e93a8546d05b2b9fd97088982b34"
+      url "https://github.com/smallyunet/pysonar2/releases/download/v4.1.0/pysonar2-v4.1.0-x86_64-apple-darwin.tar.gz"
+      sha256 "53a8c7b812c584ac672192bb35f89361e63373cde503511be8399e54aacf6886"
     end
   end
 
