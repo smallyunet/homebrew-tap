@@ -1,7 +1,6 @@
 class Echoevm < Formula
   desc "Self-contained Rust EVM debugger, tracer, and replay engine"
   homepage "https://github.com/smallyunet/echoevm"
-  version "1.6.0"
   license "MIT"
   head "https://github.com/smallyunet/echoevm.git", branch: "main"
 
