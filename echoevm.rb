@@ -6,21 +6,21 @@ class Echoevm < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/smallyunet/echoevm/releases/download/v1.6.0/echoevm-darwin-arm64"
-      sha256 "611a89734c3c899442aaa637a0a09fee859f0bb57df44598b0daa16bd6438c85"
+      url "https://github.com/smallyunet/echoevm/releases/download/v1.7.0/echoevm-darwin-arm64"
+      sha256 "f5542b9e170cbbcbffa5f819217508bac8a8e8ae0f3ef94fa238174611bd2eae"
     else
-      url "https://github.com/smallyunet/echoevm/releases/download/v1.6.0/echoevm-darwin-amd64"
-      sha256 "5d155a18507545026c5245840e3a3aa659b2bb13f750a49f96dd2b625c56b67d"
+      url "https://github.com/smallyunet/echoevm/releases/download/v1.7.0/echoevm-darwin-amd64"
+      sha256 "045d126ab4084a140caec9de1b27c4b356d68b11561e4bafd990586c74571bba"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/smallyunet/echoevm/releases/download/v1.6.0/echoevm-linux-arm64"
-      sha256 "a435aceb9d62eafc2fca3e1203c6f924eb84afd5012c9ad32f22149eac071158"
+      url "https://github.com/smallyunet/echoevm/releases/download/v1.7.0/echoevm-linux-arm64"
+      sha256 "2465e22774f50f19f3ef8e26967e803059944c06d04062178025664d046d9e8a"
     else
-      url "https://github.com/smallyunet/echoevm/releases/download/v1.6.0/echoevm-linux-amd64"
-      sha256 "38c4dba5c82378201a68d2e51627a4e96c45d935940b90b7d47500483f0b7987"
+      url "https://github.com/smallyunet/echoevm/releases/download/v1.7.0/echoevm-linux-amd64"
+      sha256 "d4d417438008376b402048900e2db842a65ef25fae87e511de9a669164c16321"
     end
   end
 
@@ -29,7 +29,7 @@ class Echoevm < Formula
   end
 
   test do
-    assert_match '"version":"1.6.0"', shell_output("#{bin}/echoevm version --json")
+    assert_match '"version":"1.7.0"', shell_output("#{bin}/echoevm version --json")
     assert_match '"status": "success"', shell_output("#{bin}/echoevm run 0x600260030100 --json")
   end
 end
